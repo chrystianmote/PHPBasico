@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Valida Email</title>
+<script>
+
+function validaEmail()
+{
+	var email = document.forms["formemail"]["txtEmail"].value;
+	var arrobapos = email.indexOf("@");
+	var arrobapos2 = email.lastIndexOf("@");
+	var pcom = email.indexOf(".com");
+	var pbr = email.indexOf(".br");
+
+	if (email.length > 7){
+		if(arrobapos < 1 || (arrobapos > email.length - 1))
+		{
+			alert("Email Invalido");
+			return false;
+		}
+		else
+		{
+			
+			if(arrobapos == arrobapos2)
+			{
+			
+					if((pcom == email.length - 7) && (pbr == email.length - 3) )
+					{
+						if(arrobapos != email.length - 8)
+						{
+							alert("Email valido1");
+						}
+						else 
+						{
+							alert("Email Invalido");
+							return false;
+						}
+					}
+					else if ((pcom == email.length - 4) && (arrobapos != email.length - 5))
+					{
+						alert("Email valido2");
+					} 
+					else if((pbr== email.length - 3) && (arrobapos != email.length - 4))
+					{
+						alert("Email valido3");		
+					}
+					else
+					{
+						alert("Email Invalido2");
+						return false;
+					}
+			}
+			else
+			{
+				alert("Email Invalido3");
+				return false;
+			}
+		}
+	}
+	else
+	{
+		alert("Email Invalido4");
+		return false;
+	}
+}
+
+</script>
+</head>
+
+<body>
+<form name="formemail" onSubmit="return validaEmail();">
+  <p>
+  <h4> Cadastro de Email</h4>
+  Digite seu Email:
+  <input type="text" name="txtEmail"/>
+  <br />
+  <input type="submit" value="Verificar" />
+  </p>
+</form>
+</body>
+</html>

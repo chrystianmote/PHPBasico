@@ -1,0 +1,43 @@
+/* CSS Document 
+Podemos comentar 
+várias linhas
+*/
+
+body{
+	background-color:silver;
+	margin:0;	
+}
+
+#txtNome,#txtMail,#txtComentario{
+	background-color:red;
+	border:lime 1px dashed;	
+	font-family:"Arial Black", Gadget, sans-serif;
+	text-transform:capitalize;
+}
+
+.botao{
+	background-color:blue;
+	color:white;
+	text-transform:uppercase;	
+	border-style:none;
+	height:40px;
+	cursor:pointer; /*Formato do mouse "Maozinha" */
+}
+
+.botao:hover{
+	background-color:purple;
+}
+
+p{
+	border:black solid 2px;	
+}
+
+form{
+	border:white solid 1px;
+	width:600px; /*Largura*/
+	margin:0 auto;	
+}
+
+
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dados nomeDaBase="Notícias" dataÚltimaAtualização="13-08-2015" horaÚltimaAtualização="15:33:17">
+    <noticia>
+        <titulo>Exemplo de um título</titulo>
+        <data>13/08/2015</data>
+        <autor>Daniel</autor>
+        <conteudo>asd asdkça sdas çldas kçasd çasld as das </conteudo>
+    </noticia>
+    <noticia>
+        <titulo>Exemplo de um título 2</titulo>
+        <data>14/08/2015</data>
+        <autor>Fulano</autor>
+        <conteudo>asd asdkça sdas çldas kçasd çasld as das </conteudo>
+    </noticia>
+</dados>

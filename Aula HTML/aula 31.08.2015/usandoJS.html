@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Trabalhando com Confirm</title>
+<script>
+
+function enviarDados(){
+var resp = confirm('Confirma Envio dos dados?');
+if (resp)
+{
+	alert('Os Dados foram enviados');
+}
+else{
+		alert('Operação Cancelada');
+}
+}
+
+function abrirSite()
+{
+	var resp = confirm('Você realmente desaja abrir esse site?');
+	if (resp)
+	{
+		document.location.href='http://www.es.senac.br';
+	}
+	else{
+		alert('Operação Cancelada');
+	}
+	
+}
+
+function verificarSenha(pass1, pass2)
+{
+	if (pass1.length <6)
+	{
+		alert("Sua senha deve ter 6 caracteres ou mais!");
+		return false;
+	}
+	else if(pass1 == pass2) 
+	{
+		alert("Cadastrada com sucesso!");
+	}
+	else
+	{
+		alert("As senhas não conferem!");
+		return false;
+	}
+}
+
+
+</script>
+</head>
+
+<body>
+
+<!--Os dados com o return no evento onSubmit garantem o não envio no get (padrão) do formulario, 
+no entanto não se utilize o name do formulario-->
+<form onSubmit="return verificarSenha(this.pwd1.value, this.pwd2.value);">
+  <button type="button" onClick="enviarDados();">Enviar Dados</button>
+  <br />
+  <button type="button" onClick="abrirSite();">Senac</button>
+  <br />
+  <button type="button" onClick="location.href='http://www.g1.com.br';">G1</button>
+  <br />
+  <p>
+  <h4> Cadastro de Senha</h4>
+  Senha:
+  <input type="password" name="pwd1"/>
+  <br />
+  Confirme:
+  <input type="password" name="pwd2"/>
+  <br />
+  <input type="submit" value="Verificar" />
+  </p>
+</form>
+</body>
+</html>

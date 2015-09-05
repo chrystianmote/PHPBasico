@@ -1,0 +1,113 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Funções em JavaScript</title>
+<script type="text/javascript">
+
+function logar()
+{
+	var usuario = window.prompt("Nome do Usuário:");
+	//var senha = window.prompt("Senha: ");
+	document.write("Usuário: ", usuario,"<br />");
+	document.write("Total Caracteres: ", usuario.length,"<br />");
+	document.write("Primeira letra: ", usuario[0],"<br />");
+	
+	for (var i= (usuario.length - 1); i>=0; i--)
+		document.write(usuario[i]);
+		
+	document.write("<br />");
+	cont = usuario.length - 1;
+	while(cont >= 0)
+	{
+		document.write(usuario[cont]);
+		cont--;
+	}
+	
+	diaSemana = new Array ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado");
+	mes = new Array ("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho",
+	 					"Agosto","Setembro", "Outubro", "Novembro", "Dezembro");
+	
+	var data = Date();
+	var sem = data.substring(0,3);
+	var mes2 = data.substring(4,7);
+	var dia = data.substring(8,10);
+	var ano = data.substring(11,15);
+
+	document.write("<br /> Vitória, ");
+	
+	switch(sem)
+	{
+		case "Sun":
+		document.write(diaSemana[0],", ");
+		break;
+		case "Mon":
+		document.write(diaSemana[1],", ");
+		break;
+		case "Tue":
+		document.write(diaSemana[2],", ");
+		break;
+		case "Wed":
+		document.write(diaSemana[3],", ");
+		break;
+		case "Thu":
+		document.write(diaSemana[4],", ");
+		break;
+		case "Fri":
+		document.write(diaSemana[5],", ");
+		break;
+		case "Sat":
+		document.write(diaSemana[6],", ");
+		break;
+	}
+	document.write(dia," de ");
+	
+	switch(mes2)
+	{
+		case "Jan":
+		document.write(mes[0]," de ");
+		break;
+		case "Feb":
+		document.write(mes[1]," de ");
+		break;
+		case "Mar":
+		document.write(mes[2]," de ");
+		break;
+		case "Apr":
+		document.write(mes[3]," de ");
+		break;
+		case "May":
+		document.write(mes[4]," de ");
+		break;
+		case "Jun":
+		document.write(mes[5]," de ");
+		break;
+		case "Jul":
+		document.write(mes[6]," de ");
+		break;
+		case "Aug":
+		document.write(mes[7]," de ");;
+		break;
+		case "Sep":
+		document.write(mes[8]," de ");
+		break;
+		case "Oct":
+		document.write(mes[9]," de ");
+		break;
+		case "Nov":
+		document.write(mes[10]," de ");
+		break;
+		case "Dec":
+		document.write(mes[11]," de ");
+		break;
+	}
+	document.write(ano,". ");
+	//document.write("Senha: ", senha);
+}
+
+</script>
+</head>
+
+<body onLoad="logar();">
+</body>
+</html>

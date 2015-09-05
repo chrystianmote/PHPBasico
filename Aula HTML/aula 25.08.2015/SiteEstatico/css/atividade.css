@@ -1,0 +1,89 @@
+/* CSS Document */
+body {
+	background-image: url(../imagens/bkgColor.jpg);
+	background-repeat: repeat-x;
+}
+#container {
+	width: 1170px;
+	margin: 0 auto;
+	border: 1px solid #F00;
+}
+#container #menu ul {
+	list-style: none;
+	margin-left: -38px;
+	margin-top: 0px;
+}
+#container #menu ul li {
+	display: inline;
+}
+#container #menu ul li #selecionado {
+	background-color: #8BCCEA;
+	color: #FFF;
+}
+#container #menu ul li a {
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	text-transform: capitalize;
+	font-size: 18px;
+	text-decoration: none;
+	color: #999;
+	background-color: #FFF;
+	border: 1px solid #666;
+	padding: 10px 68px;
+	margin: -3px;
+	box-shadow: 0 2px 3px #CCC;
+}
+#container #menu ul li a:hover {
+	background-color: #8BCCEA;
+	color: #FFF;
+}
+#container #logomarca h1 {
+	text-transform: uppercase;
+	font-size: 53px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times;
+	float: left;
+	color: 3d3d3d;
+}
+#container #logomarca h4 {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times;
+	text-transform: uppercase;
+	margin: 45px 0 0 30px;
+	border-left: 1px solid #CCC;
+	padding: 12px 30px 4px 30px;
+	float: left;
+	color: #999;
+}
+#container #logomarca #h4 {
+	padding: 24px 0 8px 70px;
+	margin: 40px 0 0 80px;
+}
+#container #logomarca input {
+	padding: 2px;
+	float: left;
+	margin: 63px 0px 0 100px;
+	border: 1px solid #CCC;
+	background-color: #FFF;
+	color: #999;
+	width: 300px;
+	font-size: 18px;
+	border-radius: 3px;
+}
+#container #logomarca img {
+	float: right;
+	margin-top: 50px;
+	margin-left: 2px;
+}
+#container #welcome {
+	width:550px;
+}
+#container #welcome h2 {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times;
+	font-size: 46px;
+	color: #3D3D3D;
+}
+.subtitulo
+{
+	
+}
+.texto
+{
+}

@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html>
+<head>
+<link href="estilo.css" type="text/css" rel="stylesheet"/>
+<meta charset="utf-8">
+<!--<link href="CSS/bootstrap.css" rel="stylesheet" type="text/css"/>-->
+<title>Exemplo de Formulário</title>
+<style>
+input {
+	color: gray;
+}
+.esportes {
+	
+}
+</style>
+</head>
+
+<body>
+<p><div class="container">
+  <form action="#" method="post">
+    <table width="50%" >
+      <tr>
+        <td><p>
+            <label for="txtNome">Nome:</label>
+            <input class="mudacor"id="txtNome" name="txtNome" size="30" type="text" placeholder="Digite seu Nome" >
+            Sexo:
+            <input id="rbnMasc" name="rbnSexo" type="radio" >
+            <label for="rbnMasc">M</label>
+            <input id="rbnFem" name="rbnSexo" type="radio" >
+            <label for="rbnFem">F</label>
+          </p></td>
+      </tr>
+      <tr>
+        <td><p> E-mail:
+            <input class="mudacor" name="txtEmail" size="30" type="email" placeholder="Digite seu e-mail" >
+          </p></td>
+      </tr>
+      <tr>
+        <td><p> Navegador preferido:
+            <select>
+              <option value="Firefox"> Mozilla Firefox</option>
+              <option value="Chrome" selected> Google Chrome</option>
+              <option value="IExplorer"> Internet Explorer</option>
+            </select>
+          </p></td>
+      </tr>
+      <tr>
+        <td><p> Esportes que aprecia:<br />
+            <input class="esportes" id="chkfutebol" type="checkbox" >
+            futebol
+            <input class="esportes" id="chkbasquete" type="checkbox" >
+            basquete
+            <input class="esportes" id="chktenis" type="checkbox" >
+            tênis
+            <input class="esportes" id="chkvolei" type="checkbox" >
+            vôlei
+            <input class="esportes" id="chkhandebol" type="checkbox" >
+            handebol
+            <input class="esportes" id="chknenhum" type="checkbox" >
+            nenhum deles </p></td>
+      </tr>
+      <tr>
+        <td><p> Comentário sobre seus esportes: <br />
+            <textarea class="mudacor"  id="txtComentario" name="txtComentario" cols="70" rows="10"></textarea>
+          </p></td>
+      </tr>
+      <tr>
+        <td><!--<fieldset>
+            <legend>Cadastro</legend>-->
+            <input class="botao" type="submit">
+            <input class="botao" type="reset" value="Limpar">
+            <br />
+            <input type="color">
+            <br />
+            <input type="range">
+            <br />
+            <input type="date">
+            <br />
+            <input type="tel">
+            <br />
+            <input type="url">
+            <br />
+            <input type="datetime">
+            <br />
+            <input type="datetime-local">
+            <br />
+            <input type="file">
+            <br />
+            <input type="image">
+            <br />
+            <input type="month">
+            <br />
+            <input type="number">
+            <br />
+         <!-- </fieldset>--></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</p>
+
+</body>
+</html>

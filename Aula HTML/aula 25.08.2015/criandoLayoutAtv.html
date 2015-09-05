@@ -1,0 +1,145 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Criando layouts ATV</title>
+<style type="text/css">
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin: 0;
+}
+#menu ul {
+	list-style: none;
+	padding-top: 15px;
+}
+#menu ul li {
+	display: inline;
+	margin-right: 20px;
+}
+#menu ul li a {
+	background-color: #FFF;
+	border: #CCC 2px solid;
+	text-decoration: none;
+	padding: 15px 30px;
+	border-radius: 5px;
+}
+#titulo ul {
+	list-style: none;
+}
+#titulo ul li {
+	display: inline;
+}
+#titulo ul li span{
+	font-size:18px;
+}
+#menu ul li a:hover {
+	background-color: #e8e8e8;
+}
+#container {
+	margin: 20px auto;
+	width: 1154px;/*1170 - 16px de rolagem*/
+	height: auto;
+}
+#menu {
+	height: 50px;
+}
+#titulo {
+	background-color: #9F3;
+	height: 100px;
+}
+#imagem {
+	background-color: #996;
+	height: 250px;
+}
+#col1 {
+	float: left;
+	background-color: #FCC;
+	width: 578px;
+	height: 250px;
+}
+#col4, #col5 {
+	background-color: #0F6;
+	width: 289px;
+}
+#col6, #col7 {
+	background-color: #0C9;
+	width: 288px;
+}
+#col8, #col9 {
+	width: 289px;
+}
+#col11 {
+	float: left;
+	background-color: #0FF;
+	height: 250px;
+	width: 380px;
+}
+#col10 {
+	float: left;
+	background-color: #030;
+	height: 250px;
+	width: 196px;
+}
+.colunas {
+	width: 288px;
+	float: left;
+	background-color: #CF6;
+	height: 250px;
+}
+#col3 {
+	background-color: #33C;
+}
+
+#corsas
+{
+	font-size:50px;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+  <div class="linha">
+    <div id="menu">
+      <center>
+        <ul>
+          <li><a href="#">HomePage</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+      </center>
+    </div>
+    <div id="titulo">
+      <ul>
+        <li>
+          <span id="corsas">Corsas</span>
+        </li>
+        <li><span  id="best">BEST BUSINESS
+          SOLUTIONS</span></li>
+        <li></li>
+      </ul>
+    </div>
+    <div id="imagem"></div>
+  </div>
+  <div class="linha">
+    <div id="col1"></div>
+    <div id="col2" class="colunas"></div>
+    <div id="col3" class="colunas"></div>
+  </div>
+  <div class="linha">
+    <div id="col4" class="colunas"></div>
+    <div id="col5" class="colunas"></div>
+    <div id="col6" class="colunas"></div>
+    <div id="col7" class="colunas"></div>
+  </div>
+  <div class="linha">
+    <div id="col8" class="colunas"></div>
+    <div id="col9" class="colunas"></div>
+    <div id="col10" ></div>
+    <div id="col11" ></div>
+  </div>
+</div>
+</body>
+</html>

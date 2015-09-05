@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sem título</title>
+<style>
+   input{
+	 color:gray;   
+   }
+</style>
+
+<link href="estilo1.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<p>
+  <form action="" method="post">
+  <!--<fieldset><legend>Cadastro</legend>-->
+    <label for="txtNome">Nome:</label>
+    <input type="text" name="txtNome" id="txtNome" size="40"/>
+    Sexo:<input type="radio" name="sexo" id="rbMasc" />
+    <label for="rbMasc">M</label>
+    <input type="radio" name="sexo" id="rbFemi" />
+    <label for="rbFemi">F</label>
+    <br /><br />
+    <label for="txtMail">E-mail:</label>
+    <input type="email" name="txtMail" id="txtMail" size="40" />
+    <br /><br />
+	<label for="slBrowser">Navegador preferido:</label>
+    <select name="slBrowser" id="slBrowser">
+      
+      <option value="Chrome">Google Chrome</option>
+      <option value="Firefox">Mozila Firefox</option>
+      <option value="Explorer">Internet Explorer</option>
+      <option value="Netscape">Netscape Navigator</option>
+      <option value="Browser" selected>Browser</option>
+    </select>
+    <br /><br />
+    Esportes que aprecia:<br />
+    <input type="checkbox" class="esportes" id="cbFutebol" />
+    <label for="cbFutebol">Futebol</label>
+    <input type="checkbox" class="esportes" id="cbBasquete" />
+    <label for="cbBasquete">Basquete</label>  
+    <input type="checkbox" class="esportes" id="cbTenis" />
+    <label for="cbTenis">Tênis</label>  
+    <input type="checkbox" class="esportes" id="cbVolei" />
+    <label for="cbVolei">Vôlei</label>
+    <input type="checkbox" class="esportes" id="cbHandebol" />
+    <label for="cbHandebol">Handebol</label>
+    <input type="checkbox" class="esportes" id="cbNenhum" />
+    <label for="cbNenhum">Nenhum deles</label>
+    <br /><br />
+    <label for="txtComentario">Comentário sobre o esporte preferido</label><br />
+    <textarea name="txtComentario" id="txtComentario"
+    cols="60" rows="5"></textarea><br /><br />
+    <input class="botao" type="submit" value="Enviar" />
+    <input class="botao" type="reset" value="Limpar" />  
+    <!--</fieldset>-->  
+  </form>
+</p>
+</body>
+</html>

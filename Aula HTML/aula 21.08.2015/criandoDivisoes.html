@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Layout com Divisões</title>
+<style type="text/css">
+body {
+	margin: 0;
+}
+#titulo1,#rodape {
+	background-color:#0C6;
+	width: 988px;/*1024 - 16px de rolagem -20cm margem*/
+	height: 150px;
+	margin-left:10px;
+}
+#chamada1, #chamada2, #chamada4, #chamada5 {
+	background-color:#0C6;
+	width: 323px; /* (988-20)= 968 dividido por 3*/
+	float: left;
+	margin: 10px 0 0 10px;
+}
+#chamada1, #chamada2 {
+	height: 300px;
+}
+#chamada3 {
+	margin: 10px 0 0 10px;
+	background-color:#0C6;
+	width: 322px;
+	float: left;
+	height: 670px;
+}
+#titulo2
+{
+	background-color:#069;
+	height:150px;
+	margin: 320px 0 0 10px;
+	width:656px;
+
+}
+#chamada4, #chamada5 {
+background-color:#696;
+height:200px;
+margin-top: -199px;
+}
+#rodape
+{
+	margin-top:220px;
+	margin-bottom: 10px;
+}
+
+</style>
+</head>
+
+<body>
+<div id="titulo1"></div>
+<div id="chamada1"></div>
+<div id="chamada2"></div>
+<div id="chamada3"></div>
+<div id="titulo2"></div>
+<div id="chamada4"></div>
+<div id="chamada5"></div>
+<div id="rodape"></div>
+</body>
+</html>

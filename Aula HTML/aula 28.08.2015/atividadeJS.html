@@ -1,0 +1,99 @@
+﻿<!doctype html>
+<html>
+<head>
+<style type="text/css">
+* {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+input {
+	size: 20px;
+	border: 2px solid #CCC;
+	border-radius: 3px;
+}
+button {
+	background-color: #EEE;
+	padding: 5px 8px;
+	border-radius: 3px;
+}
+fieldset {
+	background-color: #EEE;
+	margin: 30px auto;
+	width: 700px;
+}
+</style>
+<script> 
+
+function resultado(media)
+{
+	if(media > 7)
+	{
+		document.write("Aprovado");
+		
+		}
+	else
+	{
+		document.write("Reprovado");
+	}
+}
+function resultadoFinal(nome,nota1,nota2)
+{
+	var media = (nota1+nota2) / 2;
+	
+	if(media > 7)
+	{
+		document.write("A media de ",nome," é ",media ,": Aprovado");
+		
+	}
+	else
+	{
+		document.write("A media de ",nome," é ",media ,": Reprovado");
+	}
+}
+/*function mostrarResultado()
+{
+	var nome = document.forms["frm2"]["txtNome"].value;
+	var nota1 = parseFloat(document.forms["frm2"]["txtNota1"].value);
+	var nota2 = parseFloat(document.forms["frm2"]["txtNota1"].value);
+	alert(nome + "teve media "+ (nota1+nota2)/2 + ".");
+}*/
+</script>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+</head>
+
+<body>
+<fieldset>
+  <legend>Conferir Media</legend>
+  <p>
+  <form name="frm" action="" method="post">
+    <label for="txtMedia">Digite a média:</label>
+    <input type="text" id="txtMedia" name="txtMedia"/>
+    <button type="button"  onClick="resultado(parseFloat(frm.txtMedia.value));">Resultado</button>
+  </form>
+  </p>
+</fieldset>
+<fieldset>
+  <legend>Conferir Resultado</legend>
+  <p>
+  <form name="frm2" action="" method="post">
+    <table>
+      <tr>
+        <td><label for="txtNome">Digite o nome:</label>
+          <input type="text" id="txtNome" name="txtNome"/></td>
+        <td rowspan="4"><button type="button"  onClick="resultadoFinal(frm2.txtNome.value, parseFloat(frm2.txtNota1.value), parseFloat(frm2.txtNota2.value));">Resultado</button></td>
+      </tr>
+      <tr>
+        <td><label for="txtNota1">Digite a nota 1:</label>
+          <input type="text" id="txtNota1" name="txtNota1"/></td>
+      </tr>
+      <tr>
+        <td><label for="txtNota2">Digite  a nota 2:</label>
+          <input type="text" id="txtNota2" name="txtNota2"/></td>
+      </tr>
+    </table>
+  </form>
+  </p>
+</fieldset>
+</body>
+</html>

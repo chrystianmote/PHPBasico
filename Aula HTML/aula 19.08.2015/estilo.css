@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: #FFC;
+	margin:0;
+}
+.mudacor {
+	color: White;
+	background-color: #09F;
+	text-transform: capitalize;
+	border: blue 2px dashed;
+	font-family: "Arial Black", Gotham, Arial;
+}
+.mudacor:focus {
+	background-color: purple;
+}
+.botao {
+	background-color: blue;
+	color: white;
+	text-transform: uppercase;
+	border-style: none;
+	height: 40px;
+	cursor: pointer;
+}
+.botao:hover {
+	background-color: black;
+	color: #3F6;
+}
+form p {
+	border: black slid 2px;
+}

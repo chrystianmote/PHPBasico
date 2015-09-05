@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dados nomeDaBase="Notícias" dataÚltimaAtualização="18-08-2015" horaÚltimaAtualização="10:11:16">
+    
+    <noticia>
+        <idNoticia>1</idNoticia>
+        <titulo>Galo retomou a liderança</titulo>
+        <data>17/08/2015</data>
+        <autor>Chrystian Moté Barbosa</autor>
+        <conteudo> É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por 'lorem ipsum' mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero). </conteudo>
+    </noticia>
+    <noticia>
+        <idNoticia>4</idNoticia>
+        <titulo>se tornou o primeiro</titulo>
+        <data>10/10/2014</data>
+        <autor>Chrystian </autor>
+        <conteudo> Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. </conteudo>
+    </noticia>
+    <noticia>
+        <idNoticia>5</idNoticia>
+        <titulo>Loren Ipsum</titulo>
+        <data>10/10/2014</data>
+        <autor>Chrystian</autor>
+        <conteudo>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</conteudo>
+    </noticia>
+    <noticia>
+        <idNoticia>6</idNoticia>
+        <titulo>Loren Ipsum</titulo>
+        <data>10/10/2014</data>
+        <autor>Chrystian</autor>
+        <conteudo>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</conteudo>
+    </noticia>
+    <noticia>
+        <idNoticia>7</idNoticia>
+        <titulo>Galo retomou a liderança</titulo>
+        <data>17/08/2015</data>
+        <autor>Chrystian </autor>
+        <conteudo>Parte 2-  Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. </conteudo>
+    </noticia>
+    <noticia>
+        <idNoticia>8</idNoticia>
+        <titulo>Galo perdeu a liderança</titulo>
+        <data>01/08/2015</data>
+        <autor>Chrystian Moté</autor>
+        <conteudo>É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por 'lorem ipsum' mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).</conteudo>
+    </noticia>
+</dados>

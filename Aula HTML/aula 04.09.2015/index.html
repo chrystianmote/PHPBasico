@@ -1,0 +1,245 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <meta name="description" content="Bem vindo ao Unverso do SENAC Vitória" />
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:300,400,500,700">
+        <title>Senac Espírito Santo | Disque Cursos (27) 3325-8311</title>
+        <style>
+		*{
+			font-family: Raleway, sans-serif;
+		}
+		
+            header {
+                font-family: Raleway, sans-serif;
+                font-size: 18px;
+                height: 250px;
+            }
+
+            #conteudo1 p,#conteudo2 p,#conteudo3 p,#conteudo4 p,#conteudo5 p,#conteudo6 p
+            {
+                height:140px;
+            }
+
+            #conteudo1 button,#conteudo2 button,#conteudo3 button,#conteudo4 button,#conteudo5 button,#conteudo6 button
+            {
+                float:right;
+            }
+
+			#headSenac
+			{
+				background-color:#eb9316;
+				font-weight:bold;
+				color:#FFF;
+				padding:5px 0;
+				border-radius:2px;
+			}
+
+            .cxTexto {
+                font-family: Raleway, sans-serif;
+                vertical-align:middle;
+                text-align:justify;
+                height: 210px;
+                padding: 19px;
+                margin-bottom: 20px;
+                background-color: #FFFFCC;
+                border: 1px solid #FFCC33;
+                border-radius: 4px;
+            }
+            body {
+                background-image: url(img/bkg.jpg);
+                background-size: 100%;
+            }
+            .centralizar {
+                margin: 100 auto;
+                width: 80%;
+            }
+            .carousel-inner .item img, .carousel-inner .item a img {
+                width: 90%;
+                margin: 0 auto;
+            }
+            .espaco {
+                padding-top: 50px;
+            }
+            /*
+            .container nav{
+            border-color:#B0B0B0;
+            border-radius:2px;
+            }*/
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top ">
+                <div class="container">
+                    <div class="navbar-header ">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                        <center>
+                            <a class="navbar-brand" href="#">
+                                <div style="margin-top:-10px" ><img src="img/nova_logo.png" width="65" height="40" /></div>
+                            </a>
+                        </center>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+
+                            <!-- primeiro item do nav bar-->
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Institucional</strong><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">O QUE É O SENAC?</a></li>
+                                    <li><a href="#">GESTÃO E TRANSPARÊNCIA</a></li>
+                                    <li><a href="#">UNIDADES</a></li>
+                                    <li><a href="#">ESTRUTURA</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">SOBRE OS 70 ANOS</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- segundo item do nav bar-->
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Nosso Negócio</strong><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">CURSOS</a></li>
+                                    <li><a href="#">CURSOS TÉCNICOS</a></li>
+                                    <li><a href="#">EDUCAÇÃO A DISTÂNCIA</a></li>
+                                    <li><a href="#">ATENDIMENTO CORPORATIVO</a></li>
+                                    <li><a href="#">POLÍTICA DE DESCONTOS</a></li>
+                                    <li><a href="#">MATRÍCULAS</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- terceiro item do nav bar-->
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>SENAC Social</strong><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">CURSOS</a></li>
+                                    <li><a href="#">CURSOS GRATUITOS</a></li>
+                                    <li><a href="#">APRENDIZAGEM</a></li>
+                                    <li><a href="#">OUTRAS AÇÕES</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- quarto item do nav bar-->
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Serviços</strong><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">CURSOS</a></li>
+                                    <li><a href="#">BANCO DE OPORTUNIDADES</a></li>
+                                    <li><a href="#">SENAC MÓVEL</a></li>
+                                    <li><a href="#">EMPRESAS CONVENIADAS</a></li>
+                                    <li><a href="#">LICITAÇÕES</a></li>
+                                    <li><a href="#">ATENDIMENTO CORPORATIVO</a></li>
+                                    <li><a href="#">TRABALHE CONOSCO</a></li>
+                                    <li><a href="#">ATENDIMENTOS DE BELEZA</a></li>
+                                    <li><a href="#">FALE CONOSCO</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!--   Formulario de busca no site-->
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Buscar</button>
+                        </form>
+
+                        <!--   utilizando redes sociais-->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><img src="img/redessoc.png" width="auto" height="25" alt="redes sociais" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                            <li data-target="#myCarousel" data-slide-to="5"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active"> <img src="img/76.jpg" width="650" height="300" /> </div>
+                            <div class="item"> <img src="img/81.jpg" width="650" height="300" />
+                                <div class="carousel-caption">
+                                    <h3>Imagens Fortes</h3>
+                                    <p>Observe com atenção, Grato.</p>
+                                </div>
+                            </div>
+                            <div class="item"> <img src="img/85.jpg" width="650" height="300" /> </div>
+                            <div class="item"> <img src="img/86.jpg" width="650" height="300" /> </div>
+                            <div class="item"> <img src="img/88.jpg" width="650" height="300" /> </div>
+                            <div class="item"> <img src="img/89.jpg" width="650" height="300" /> </div>
+                        </div>
+
+                        <!-- Left and right controls --> 
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+                </div>
+            </div>
+            <div class="row">
+                <div  class="col-md-12">
+                    <h2 id="headSenac" align="center">SENAC NOTICIAS</h2>
+             	</div>
+            </div>
+            <div class="row espaco">
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#conteudo1">SENAC &nbsp;GRATUIDADE&nbsp; </button>
+                    <div id="conteudo1" class="collapse cxTexto in"><!-- O "in" faz o conteúdo ser exibido no ato do carregamento--> 
+                        <p>Milhares de vagas gratuitas em Cursos Técnicos e de Capacitação oferecidos pelo Senac Espírito Santo. Aproveite essa oportunidade para se capacitar!.</p> 
+                        <button type="button" class="btn btn-danger"> Saiba + </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#conteudo2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;APRENDIZAGEM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <div id="conteudo2" class="collapse cxTexto in"><!-- O "in" faz o conteúdo ser exibido no ato do carregamento--> 
+                        <p><strong> Programa Aprendizagem no Senac.</strong> EMPRESÁRIO: Confira os municípios onde o Senac Espírito Santo oferece os cursos de Aprendizagem, e todas as informações sobre o seu credenciamento e providências para a inscrição do aprendiz. </p>
+                        <button type="button" class="btn btn-danger"> Saiba + </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#conteudo3">VAGAS DE TRABALHO</button>
+                    <div id="conteudo3" class="collapse cxTexto in"><!-- O "in" faz o conteúdo ser exibido no ato do carregamento--> 
+                        <p>O Senac ES encaminha, de forma exclusiva e gratuita, alunos e ex-alunos para vagas em empresas através do seu Banco de Oportunidades. Confira as vagas!</p> 
+                        <button type="button" class="btn btn-danger"> Saiba + </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row espaco">
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#conteudo4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SENAC EAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <div id="conteudo4" class="collapse cxTexto in"><!-- O "in" faz o conteúdo ser exibido no ato do carregamento--> 
+                        <p> Estão abertas as inscrições para o processo seletivo do 1º semestre de 2015 para os cursos de pós-graduação a distância.</p>
+                        <button type="button" class="btn btn-danger"> Saiba + </button> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#conteudo5">&nbsp;RESÍDUOS SÓLIDOS&nbsp;</button>
+                    <div id="conteudo5" class="collapse cxTexto in"><!-- O "in" faz o conteúdo ser exibido no ato do carregamento--> 
+                        <p> Com a Política Nacional de Resíduos Sólidos, o lixo deixou de ser um problema apenas da esfera governamental para ser responsabilidade também do empresariado. Porém, agir conscientemente em relação à produção e descarte de resíduos pode gerar benefícios ao negócio, tanto economicamente quanto no ganho de imagem. <p>
+                            <button type="button" class="btn btn-danger"> Saiba + </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#conteudo6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRONATEC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <div id="conteudo6" class="collapse cxTexto in "><!-- O "in" faz o conteúdo ser exibido no ato do carregamento--> 
+                        <p>O Programa Nacional de Acesso ao Ensino Técnico e Emprego (PRONATEC) é uma ação do Governo Federal que tem como objetivo expandir, interiorizar e democratizar a oferta de cursos técnicos e cursos de formação inicial e continuada para trabalhadores e estudantes. </p>
+                        <button type="button" class="btn btn-danger"> Saiba + </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
