@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Bem vindo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+        
+        
+        <style type="text/css">
+            body{
+                margin-top: 100px;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+
+
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top ">
+                <div class="container">
+                    <div class="navbar-header ">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                        <center>
+                            <a class="navbar-brand" href="#">
+                                <div style="margin-top:-10px" ><img src="icones/red/png/32x32/edit_user.png" width="32" height="32" /></div>
+                            </a>
+                        </center>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+
+                            <!-- primeiro item do nav bar-->
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Aluno</strong><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="cadastroAluno.php">Cadastrar Aluno</a></li>
+                                    
+                                    <li><a href="listarAluno.php">Listar Aluno</a></li>
+                                    <li><a href="listaAlterarAluno.php">Editar e Excluir Aluno</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Sobre o Aluno SENAC</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- segundo item do nav bar-->
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Professor</strong><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Cadastro Professor</a></li>
+                                    <li><a href="#">Listar Professor</a></li>
+                                    <li><a href="#">Editar e Excluir Professor</a></li>
+                                    <li><a href="#">Minhas Turmas</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- terceiro item do nav bar-->
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Matricula</strong><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="cadastroMatricula.php">Efetuar Matricula</a></li>
+                                    <li><a href="listaAlterarMatricula.php">Listar Matriculas</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- quarto item do nav bar-->
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Curso</strong><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Abrir Novo Curso</a></li>
+                                    <li><a href="#">Listar Cursos</a></li>
+                                    <li><a href="#">Editar Curso</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!--   Formulario de busca no site-->
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="jumbotron">
+                        <h1>Cadastre Seu Aluno</h1>
+                        <p>Cadastrar o Aluno interessado no programa do Sistema</p>
+                        <p><a class="btn btn-danger btn-lg" href="cadastroAluno.php" role="button">Cadastrar</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="jumbotron">
+                        <h1>Exiba Seu Aluno</h1>
+                        <p>Exibir o Aluno interessado no programa do Sistema</p>
+                        <p><a class="btn btn-danger btn-lg" href="listarAluno.php" role="button">Listar</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="jumbotron">
+                        <h1>Atualize Seu Aluno</h1>
+                        <p>Atualizar o Aluno interessado no programa do Sistema</p>
+                        <p><a class="btn btn-danger btn-lg" href="listaAlterarAluno.php" role="button">Atualizar</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

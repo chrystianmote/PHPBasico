@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sem título</title>
+</head>
+
+<body>
+<h3>Cadastrar Alunos</h3>
+<form id="frmCadAluno" name="frmCadAluno" method="post" action="cadastroAluno.php">
+  <p>
+    <label for="codAluno">Código do Aluno:</label>
+    <input type="text" name="codAluno" id="codAluno" />
+  </p>
+  <p>
+    <label for="nmAluno">Nome do Aluno:</label>
+    <input type="text" name="nmAluno" id="nmAluno" />
+  </p>
+  <p>
+    <label for="edAluno">Logradouro:</label>
+    <input name="edAluno" type="text" id="edAluno" size="80" />
+  </p>
+  <p>
+    <label for="cdAluno">Cidade:</label>
+    <input name="cdAluno" type="text" id="cdAluno" size="30" />
+  </p>
+  <p>
+    <label for="etEstado">Estado:</label>
+    <select name="etEstado" id="etEstado">
+      <option value="ES">Espírito Sando</option>
+      <option value="MG">Minas Gerais</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="SP">São Paulo</option>
+    </select>
+  </p>
+  <p>
+    <label for="cpCep">CEP:</label>
+    <input name="cpCep" type="text" id="cpCep" size="15" />
+  </p>
+  <p>
+    <label for="tlTelefone">Telefone:</label>
+    <input type="text" name="tlTelefone" id="tlTelefone" />
+  </p>
+  <p>
+    <label for="dtNascimento">Nascimento:</label>
+    <input type="text" name="dtNascimento" id="dtNascimento" placeholder="yyyy-MM-dd" />
+  </p>
+  <p>
+    <label for="rpResponsavel">Responsável: </label>
+    <input type="text" name="rpResponsavel" id="rpResponsavel" />
+  </p>
+  <p>
+    <label for="stStatus">Status:</label>
+    <select name="stStatus" id="stStatus">
+      <option value="Aprovado">Aprovado</option>
+      <option value="Reprovado">Reprovado</option>
+      <option value="Ativo">Ativo</option>
+      <option value="Inativo">Inativo</option>
+    </select>
+  </p>
+  <p>
+    <input type="submit" name="btEnviar" id="btEnviar" value="Cadatrar Aluno" />
+    <input type="reset" name="btCancelar" id="btCancelar" value="Cancelar" />
+  </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

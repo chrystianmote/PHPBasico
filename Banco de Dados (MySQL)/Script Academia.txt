@@ -1,0 +1,420 @@
+CREATE TABLE permissoes (
+  	cod_permissao  	INTEGER              	NOT NULL,
+  	desc_permissao 	VARCHAR(30)   	NOT NULL,
+  	CONSTRAINT pk_codigopermissao 
+	    	PRIMARY KEY(cod_permissao)
+);
+
+CREATE TABLE exercicio (
+  	cod_exercicio     	INTEGER               	NOT NULL,
+  	nome_exercicio    	VARCHAR(30)   	NOT NULL,
+	 funcao_exercicio 	VARCHAR(30)   	NOT NULL,
+  	desc_exercicio    	VARCHAR(30)   	NOT NULL,
+  	CONSTRAINT pk_codigoexercicio 
+	    	PRIMARY KEY(cod_exercicio)
+);
+
+CREATE TABLE parte_corpo (
+  	cod_parte  	INTEGER              	NOT NULL,
+  	nome_parte 	VARCHAR(30)   	NOT NULL,
+  	CONSTRAINT pk_codigoparte 
+	   	 PRIMARY KEY(cod_parte)
+);
+
+CREATE TABLE uf (
+  	sigla_uf 	 	CHAR(2)      	NOT NULL,
+  	nome_uf 	 	VARCHAR(20)   	NOT NULL,
+	 CONSTRAINT pk_siglauf 
+	     	PRIMARY KEY(sigla_uf)
+);
+
+CREATE TABLE modalidade (
+  	cod_modalidade    	INTEGER                 	NOT NULL,
+  	nome_modalidade   	VARCHAR(30)   	NOT NULL,
+  	funcao_modalidade 	VARCHAR(30)   	NOT NULL,
+  	valor_modalidade  	DECIMAL(9,2)     	NOT NULL,
+  	CONSTRAINT pk_codigomodalidade 
+	    	PRIMARY KEY(cod_modalidade)
+);
+
+CREATE TABLE perfil (
+  	cod_perfil    	INTEGER               	NOT NULL,
+  	cod_permissao	 INTEGER              	NOT NULL,
+  	tipo_perfil   	VARCHAR(20)   	NOT NULL,
+	CONSTRAINT pk_codigoperfil 
+	    	PRIMARY KEY(cod_perfil),
+  	CONSTRAINT fk_codigopermissao 
+		FOREIGN KEY(cod_permissao)
+			REFERENCES permissoes(cod_permissao)
+);
+
+CREATE TABLE cidade (
+  	cod_cidade  	INTEGER             	NOT NULL,
+  	sigla_uf    		CHAR(2)     	NOT NULL,
+  	nome_cidade 	VARCHAR(50)  	NOT NULL,
+  	CONSTRAINT pk_codigocidade 
+	    PRIMARY KEY(cod_cidade)  ,
+	CONSTRAINT fk_siglauf 
+		FOREIGN KEY(sigla_uf)
+			REFERENCES uf(sigla_uf)
+);
+
+CREATE TABLE bairro (
+  	cod_bairro 	INTEGER               	NOT NULL,
+  	cod_cidade 	INTEGER               	NOT NULL,
+  	nome_bairro 	VARCHAR(20)   	NOT NULL,
+  	CONSTRAINT pk_codigobairro 
+	    PRIMARY KEY(cod_bairro)  ,
+  	CONSTRAINT fk_codigocidade 
+		FOREIGN KEY(cod_cidade)
+			REFERENCES cidade(cod_cidade)
+);
+
+CREATE TABLE pessoa (
+  	cod_pessoa  	INTEGER   	NOT NULL ,
+  	cod_bairro	INTEGER   	NOT NULL ,
+  	cpf_pessoa 	CHAR(11) ,
+  	nome_pessoa 	VARCHAR(30)     NOT NULL,
+  	rua         	VARCHAR(30),
+  	numero      	INTEGER,
+	sexo 		CHAR(1)         NOT NULL,
+  	CONSTRAINT pk_codigopessoa 
+	   	 PRIMARY KEY(cod_pessoa)  ,
+  	CONSTRAINT fk_codigobairro 
+		FOREIGN KEY(cod_bairro)
+			REFERENCES bairro(cod_bairro),
+                	CONSTRAINT uq_cpfpessoa 
+		UNIQUE(cpf_pessoa)
+);
+
+CREATE TABLE usuario ( 
+  	cod_usuario   	INTEGER                	NOT NULL,
+  	cod_pessoa    	INTEGER                	NOT NULL,
+  	cod_perfil   	 INTEGER               	NOT NULL,
+  	login_usuario 	VARCHAR(8)       	NOT NULL,
+  	senha_usuario 	VARCHAR(255)  	        NOT NULL,
+	CONSTRAINT pk_codigousuario 
+		PRIMARY KEY(cod_usuario)    ,
+  	CONSTRAINT fk_codigoperfil 
+		FOREIGN KEY(cod_perfil)
+			REFERENCES perfil(cod_perfil),
+  	CONSTRAINT fk_pessoa_usuario 
+		FOREIGN KEY(cod_pessoa)
+			REFERENCES pessoa(cod_pessoa),
+	CONSTRAINT uq_login_usuario 
+		UNIQUE(login_usuario)
+);
+
+CREATE TABLE personal_trainer (
+	cod_personal_trainer 	INTEGER   NOT NULL,
+	cod_usuario  		INTEGER   NOT NULL,
+	nome			VARCHAR(30), 
+	CONSTRAINT pk_codigoPers_Trainer 
+	   	 PRIMARY KEY(cod_personal_trainer),
+	CONSTRAINT fk_UsuarioPersonalTrainer 
+ 		FOREIGN KEY(cod_usuario) 
+			REFERENCES usuario(cod_usuario)
+);
+
+CREATE TABLE avaliacao_fisica (
+  	cod_avaliacao       	     INTEGER   	NOT NULL,
+  	cod_personal_trainer  INTEGER   	NOT NULL,
+  	cod_pessoa 	     INTEGER   	NOT NULL,
+  	apto 		     CHAR(1) 	DEFAULT 'A',
+  	data_avaliacao       	     DATE,
+	CONSTRAINT pk_codigo_avaliacao 
+		PRIMARY KEY(cod_avaliacao),
+  	CONSTRAINT fk_codigo_Pers_Trainer 
+		FOREIGN KEY(cod_personal_trainer)
+			REFERENCES personal_trainer(cod_personal_trainer),
+  	CONSTRAINT fk_pessoa_avaliacao_fisica
+		FOREIGN KEY(cod_pessoa)
+			REFERENCES pessoa(cod_pessoa)	
+);
+
+CREATE TABLE matricula (
+  	matricula 		 CHAR(8)   	NOT NULL,
+  	cod_modalidade 	 INTEGER   	NOT NULL,
+  	cod_pessoa 	 INTEGER   	NOT NULL,
+  	data_vencimento	 DATE,
+	CONSTRAINT pk_numero_Matricula 
+		PRIMARY KEY(matricula),
+	CONSTRAINT fk_codigomodalidade  
+		FOREIGN KEY(cod_modalidade)
+    		REFERENCES modalidade(cod_modalidade),
+  	CONSTRAINT fk_pessoa_matricula 
+		FOREIGN KEY(cod_pessoa)
+    			REFERENCES pessoa(cod_pessoa)
+);
+
+CREATE TABLE medico (
+  	crm 		CHAR(7)   	NOT NULL,
+  	cod_usuario 	INTEGER  	 NOT NULL,
+	CONSTRAINT pk_crm
+		PRIMARY KEY(crm),
+	CONSTRAINT fk_Usuario_medico  
+		FOREIGN KEY(cod_usuario)
+			REFERENCES usuario(cod_usuario)
+);
+
+CREATE TABLE ficha (
+  	cod_ficha 	INTEGER   	NOT NULL,
+	matricula  	CHAR(8)   	NOT NULL,
+	CONSTRAINT pk_codigoficha 
+		PRIMARY KEY(cod_ficha),
+	CONSTRAINT fk_Matricula  
+		FOREIGN KEY(matricula)
+    		REFERENCES matricula(matricula)
+);
+
+CREATE TABLE avaliacao_medica (
+  	cod_avaliacao	INTEGER  	NOT NULL,
+  	crm 		CHAR(7)   	NOT NULL,
+  	matricula 		CHAR(8)   	NOT NULL,
+  	data_avaliacao	DATE   		NOT NULL,
+  	data_validade 	DATE          	NOT NULL,
+	CONSTRAINT pk_avaliacao_medica 
+		PRIMARY KEY(cod_avaliacao),
+  	CONSTRAINT fk_crm 
+		FOREIGN KEY(crm)
+    		REFERENCES medico(crm),
+  	CONSTRAINT fk_matricula_avaliacao 
+		FOREIGN KEY(matricula)
+    		REFERENCES matricula(matricula)
+);
+
+CREATE TABLE acompanhamento_fisico (
+  	cod_acompanhamento 	INTEGER  NOT NULL,
+  	cod_personal_trainer 	INTEGER   NOT NULL,
+  	matricula_matricula 	CHAR(8)   NOT NULL,
+	CONSTRAINT pk_acompanhamento 
+		PRIMARY KEY(cod_acompanhamento),
+	CONSTRAINT fk_matricula_avaliacao_fisica
+		FOREIGN KEY(matricula_matricula)
+    		REFERENCES matricula(matricula),
+  	CONSTRAINT fk_acompanhamento_personal
+		FOREIGN KEY(cod_personal_trainer)
+    		REFERENCES personal_trainer(cod_personal_trainer)
+);
+
+CREATE TABLE item_ficha_exercicio (
+  	exercicio_cod_exercicio 	INTEGER   NOT NULL,
+	ficha_cod_ficha 		INTEGER   NOT NULL,
+  	repeticao			INTEGER   NOT NULL,
+  	serie 			INTEGER   NOT NULL,
+	CONSTRAINT pk_codigos_exerc_ficha 
+		PRIMARY KEY(exercicio_cod_exercicio, ficha_cod_ficha),
+	CONSTRAINT fk_codigoficha  
+		FOREIGN KEY(ficha_cod_ficha)
+    		REFERENCES ficha(cod_ficha),
+  	CONSTRAINT fk_codigoexercicio 
+		FOREIGN KEY(exercicio_cod_exercicio)
+    		REFERENCES exercicio(cod_exercicio)
+);
+
+CREATE TABLE item_acompanhamento_fisico (
+  	cod_parte 		INTEGER   NOT NULL,
+  	cod_acompanhamento 	INTEGER   NOT NULL,
+  	tamanho_atual 		FLOAT,
+  	tamanho_anterior 		FLOAT,
+	CONSTRAINT pk_item
+		PRIMARY KEY(cod_parte, cod_acompanhamento)    ,
+	CONSTRAINT fk_codigos_af_cacomp 
+		FOREIGN KEY (cod_acompanhamento) 
+    		REFERENCES acompanhamento_fisico (cod_acompanhamento ),
+  	CONSTRAINT fk_codigos_cc_cp 
+		FOREIGN KEY(cod_parte)
+    		REFERENCES parte_corpo(cod_parte)
+);
+
+
+
+Insert into permissoes values (1, 'Recepcionista');
+insert into permissoes values (2, 'Secretário');
+Insert into permissoes values (3, 'Gerente');
+Insert into permissoes values (4, 'Professor');
+Insert into permissoes values (5, 'Administrador');
+Insert into permissoes values (6, 'Dono');
+
+insert into exercicio values (1, 'Abdominal', 'Função do Exercício', 'Descrição do Exercício');
+insert into exercicio values (2, 'Bicicleta', 'Função do Exercício', 'Descrição do Exercício');
+insert into exercicio values (3, 'Esteira', 'Função do Exercício', 'Descrição do Exercício');
+insert into exercicio values (4, 'Musculação', 'Função do Exercício', 'Descrição Exercício');
+insert into exercicio values (5, 'Pilates', 'Função do Exercício', 'Descrição do Exercício');
+insert into exercicio values (6, 'Flexão', 'Função do Exercício', 'Descrição do Exercício');
+
+insert into parte_corpo values(1, 'Braço');
+insert into parte_corpo values(2, 'Glúteos');
+insert into parte_corpo values(3, 'Perna');
+insert into parte_corpo values(4, 'Abdômem');
+insert into parte_corpo values(5, 'Panturrilha');
+insert into parte_corpo values(6, 'Trapézio');
+
+insert into uf values('ES', 'Espírito Santo');
+insert into uf values('MG', 'Minas Gerais');
+insert into uf values('SP', 'São Paulo');
+insert into uf values('RJ', 'Rio de Janeiro');
+insert into uf values('RS', 'Rio Grande do Sul');
+insert into uf values('PR', 'Paraná');
+
+insert into modalidade values(1, 'Caminhada', 'Função', 50.00);
+insert into modalidade values(2, 'Alongamento', 'Função', 10.00);
+insert into modalidade values(3, 'Natação', 'Função', 130.00);
+insert into modalidade values(4, 'Corrida', 'Função', 30.00);
+insert into modalidade values(5, 'Yoga', 'Função', 80.00);
+insert into modalidade values(6, 'Musculação', 'Função', 70.00);
+
+insert into perfil values(1, 1, 'Perf. Recepcionista');
+insert into perfil values(2, 1, 'Perf. Recepcionista');
+insert into perfil values(3, 6, 'Perf. Dono');
+insert into perfil values(4, 5, 'Perf. Admin');
+insert into perfil values(5, 4, 'Perf. Professor');
+insert into perfil values(6, 3, 'Perf. Gerente');
+
+insert into cidade values(1, 'ES', 'Cachoeiro de Itap.');
+insert into cidade values(2, 'MG', 'Belo Horizonte');
+insert into cidade values(3, 'SP', 'São Paulo');
+insert into cidade values(4, 'RJ', 'Rio de Janeiro');
+insert into cidade values(5, 'RS', 'Porto Alegre');
+insert into cidade values(6, 'PR', 'Curitiba');
+
+insert into bairro values(1, 1, 'Guandú');
+insert into bairro values(2, 2, 'Pampulha');
+insert into bairro values(3, 3, 'Interlagos');
+insert into bairro values(4, 4, 'Copacabana');
+insert into bairro values(5, 5, 'Arco-iris');
+insert into bairro values(6, 6, 'Aeroporto');
+
+insert into pessoa values(1, 1, '00000000000', 'Saulo', 'Bernardo Horta', 304, 'M');
+insert into pessoa values(2, 1, '11111111111', 'Chrystian', 'Irene Lima', 33, 'M');
+insert into pessoa values(3, 1, '22222222222', 'Sapucaia', 'Highway to hell', 666, 'M');
+insert into pessoa values(4, 1, '33333333333', 'Weverton', 'Rua Muqui', 10, 'M');
+insert into pessoa values(5, 5, '24242424242', 'Gabriel', 'Beco dos Gays', 24, 'M');
+insert into pessoa values(6, 6, '55555555555', 'Cléber', 'Rua Muqui', 11, 'M');
+
+insert into usuario values(1, 1, 5, 'Saulo', '123');
+insert into usuario values(2, 2, 5, 'Chrys', '123');
+insert into usuario values(3, 3, 5, 'Sapuca', '666');
+insert into usuario values(4, 4, 6, 'Wever', 'Muqui');
+insert into usuario values(5, 5, 3, 'Gabriel', '2424');
+insert into usuario values(6, 6, 3, 'Cleber', 'Muqui');
+
+insert into personal_trainer values(1, 1, 'Bruna');
+insert into personal_trainer values(2, 2, 'Márcia');
+insert into personal_trainer values(3, 3, 'Satan');
+insert into personal_trainer values(4, 4, 'Marcão');
+insert into personal_trainer values(5, 5, 'Paulão');
+insert into personal_trainer values(6, 6, 'Jurema');
+
+insert into avaliacao_fisica values(1, 1, 1, 'A', '2000-01-01');
+insert into avaliacao_fisica values(2, 2, 2, 'A', '2000-01-01');
+insert into avaliacao_fisica values(3, 3, 3, 'I', '2000-01-01');
+insert into avaliacao_fisica values(4, 4, 4, 'A', '2000-01-01');
+insert into avaliacao_fisica values(5, 5, 5, 'I', '2000-01-01');
+insert into avaliacao_fisica values(6, 6, 6, 'I', '2000-01-01');
+
+insert into matricula values('00000001', 1, 1, '2013-01-01');
+insert into matricula values('00000002', 2, 2, '2013-01-01');
+insert into matricula values('00000003', 3, 3, '2013-01-01');
+insert into matricula values('00000004', 4, 4, '2013-01-01');
+insert into matricula values('00000005', 5, 5, '2013-01-01');
+insert into matricula values('00000006', 6, 6, '2013-01-01');
+
+insert into medico values('1111111', 1);
+insert into medico values('2222222', 2);
+insert into medico values('3333333', 3);
+insert into medico values('4444444', 4);
+insert into medico values('5555555', 5);
+insert into medico values('6666666', 6);
+
+insert into ficha values(1, '00000001');
+insert into ficha values(2, '00000002');
+insert into ficha values(3, '00000003');
+insert into ficha values(4, '00000004');
+insert into ficha values(5, '00000005');
+insert into ficha values(6, '00000006');
+
+insert into avaliacao_medica values(1, '1111111', '00000001', '2012-01-01', '2014-01-01');
+insert into avaliacao_medica values(2, '2222222', '00000002', '2012-01-01', '2014-01-01');
+insert into avaliacao_medica values(3, '3333333', '00000003', '2012-01-01', '2014-01-01');
+insert into avaliacao_medica values(4, '4444444', '00000004', '2012-01-01', '2014-01-01');
+insert into avaliacao_medica values(5, '5555555', '00000005', '2012-01-01', '2014-01-01');
+insert into avaliacao_medica values(6, '6666666', '00000006', '2012-01-01', '2014-01-01');
+
+insert into acompanhamento_fisico values(1, 1, '00000001');
+insert into acompanhamento_fisico values(2, 2, '00000002');
+insert into acompanhamento_fisico values(3, 3, '00000003');
+insert into acompanhamento_fisico values(4, 4, '00000004');
+insert into acompanhamento_fisico values(5, 5, '00000005');
+insert into acompanhamento_fisico values(6, 6, '00000006');
+
+insert into item_ficha_exercicio values(1, 1, 10, 10);
+insert into item_ficha_exercicio values(2, 2, 10, 10);
+insert into item_ficha_exercicio values(3, 3, 10, 10);
+insert into item_ficha_exercicio values(4, 4, 10, 10);
+insert into item_ficha_exercicio values(5, 5, 10, 10);
+insert into item_ficha_exercicio values(6, 6, 10, 10);
+
+insert into item_acompanhamento_fisico values(1, 1, 1.70, 1.80);
+insert into item_acompanhamento_fisico values(2, 2, 1.70, 1.80);
+insert into item_acompanhamento_fisico values(3, 3, 1.70, 1.80);
+insert into item_acompanhamento_fisico values(4, 4, 1.70, 1.80);
+insert into item_acompanhamento_fisico values(5, 5, 1.70, 1.80);
+insert into item_acompanhamento_fisico values(6, 6, 1.70, 1.80);
+
+select * from item_acompanhamento_fisico;
+select * from item_ficha_exercicio ;
+select * from acompanhamento_fisico;
+select * from avaliacao_medica;
+select * from ficha;
+select * from medico;
+select * from matricula;
+select * from avaliacao_fisica;
+select * from usuario;
+select * from personal_trainer;
+select * from pessoa;
+select * from bairro;
+select * from cidade;
+select * from perfil;
+select * from modalidade;
+select * from uf;
+select * from parte_corpo;
+select * from exercicio;
+select * from permissoes;
+
+SELECT p.nome_pessoa
+   FROM pessoa p 
+        INNER JOIN bairro b ON p.cod_bairro = b.cod_bairro
+        INNER JOIN cidade c ON b.cod_cidade = c.cod_cidade
+	INNER JOIN uf u     ON c.sigla_uf   = u.sigla_uf
+   WHERE u.sigla_uf = 'ES';
+
+UPDATE cidade c
+   SET c.nome_cidade = 'Cachoeiro de Itapemirim'
+   WHERE c.nome_cidade = 'Cachoeiro de Itap.' AND
+                   c.sigla_uf = 'ES';
+
+UPDATE (SELECT u.login_usuario,
+                                  u.senha_usuario 
+              FROM usuario u INNER JOIN pessoa p ON u.cod_pessoa = p.cod_pessoa 
+              WHERE (u.login_usuario = 'Sapuca') OR (p.nome_pessoa = 'Sapucaia')) us set us.senha_usuario = '666666';
+
+DROP TABLE item_acompanhamento_fisico cascade ;
+DROP TABLE item_ficha_exercicio cascade ;
+DROP TABLE acompanhamento_fisico cascade ;
+DROP TABLE avaliacao_medica cascade ;
+DROP TABLE ficha cascade ;
+DROP TABLE medico cascade ;
+DROP TABLE matricula cascade ;
+DROP TABLE avaliacao_fisica cascade ;
+DROP TABLE personal_trainer cascade ;
+DROP TABLE usuario cascade;
+DROP TABLE pessoa cascade ;
+DROP TABLE bairro cascade ;
+DROP TABLE cidade cascade ;
+DROP TABLE perfil cascade ;
+DROP TABLE modalidade cascade ;
+DROP TABLE uf cascade ;
+DROP TABLE parte_corpo cascade ;
+DROP TABLE exercicio cascade ;
+DROP TABLE permissoes cascade ;

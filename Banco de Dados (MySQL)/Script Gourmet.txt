@@ -1,0 +1,67 @@
+CREATE TABLE Menu (
+ idMenu INT NOT NULL AUTO_INCREMENT UNIQUE ,
+ Nome VARCHAR(45) NOT NULL ,
+ Categoria VARCHAR(20) NOT NULL ,
+ Preco DECIMAL(5,2) NOT NULL ,
+ Tempo VARCHAR(10) NOT NULL ,
+ Pontos INT NOT NULL ,
+ CONSTRAINT pk_menu
+		PRIMARY KEY( idMenu ) 
+);
+ 
+
+
+CREATE TABLE Pedido (
+ idPedido INT NOT NULL AUTO_INCREMENT UNIQUE ,
+ idMesa INT NOT NULL  UNIQUE,
+ idFidelidade INT NOT NULL UNIQUE  ,
+ Data DATE NOT NULL ,
+ Hora TIME NOT NULL ,
+ Status VARCHAR(10) NOT NULL ,
+ CONSTRAINT pk_ids
+		PRIMARY KEY ( idPedido , idMesa , idFidelidade ),
+ CONSTRAINT fk_idFidelidade_Pedido 
+		FOREIGN KEY(idFidelidade)
+    		REFERENCES Fidelidade(idFidelidade)
+);
+
+
+CREATE TABLE  MenuIngrediente (
+ idMenu INT NOT NULL AUTO_INCREMENT UNIQUE ,
+ Ingrediente VARCHAR(45) NOT NULL ,
+ CONSTRAINT pk_idMenu
+		PRIMARY KEY ( idMenu )
+);
+
+
+CREATE TABLE  Fidelidade (
+ idFidelidade INT NOT NULL AUTO_INCREMENT UNIQUE,
+ idPrivilegio INT NOT NULL ,
+ Cliente VARCHAR(45) NOT NULL ,
+ Data DATE NOT NULL ,
+ Email VARCHAR(60) NOT NULL ,
+ Pontos INT NOT NULL ,
+ Usuario VARCHAR(15) NOT NULL ,
+ Senha VARCHAR(45) NOT NULL ,
+ PRIMARY KEY ( idFidelidade , idPrivilegio ) 
+);
+
+
+
+CREATE TABLE  ItemPedido (
+ idItem INT NOT NULL AUTO_INCREMENT UNIQUE,
+ idPedido INT NOT NULL ,
+ idMenu INT NOT NULL ,
+ Quantidade INT NOT NULL ,
+ Preco DECIMAL(5,2) NOT NULL ,
+ HoraEntrega TIME NULL ,
+ PRIMARY KEY ( idItem , idPedido , idMenu ) 
+);
+
+
+CREATE TABLE  Privilegio (
+ idPrivilegio INT NOT NULL AUTO_INCREMENT UNIQUE,
+ Privilegio VARCHAR(10) NOT NULL ,
+ Descricao VARCHAR(45) NOT NULL ,
+ PRIMARY KEY ( idPrivilegio ) ,
+);

@@ -1,0 +1,96 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="js/jquery.min.js"></script>
+<link  rel="stylesheet"  href="css/bootstrap.min.css"><!--Primerio,versão compactada-->
+
+<!--- Tema Opcional --> 
+<link  rel="stylesheet"  href="css/bootstrap-theme.min.css"><!--Segundo-->
+
+<!---Últimas compilado e minified JavaScript --> 
+<script src="js/bootstrap.min.js"> </script>
+<style>
+#container{
+margin-top:50px;	
+}
+</style>
+
+<title>Cadastro Alunos </title>
+
+</head>
+
+<body background="images/backgroundEscolar4.jpg" >
+<div id="container" class="container">
+
+<div class='panel-group'>
+    <div class='panel panel-primary'>
+      <div class='panel-heading'><h4><img src="images/addressbook-edit48.png"> Cadastro De Alunos </img></h4> </div>
+      <div class='panel-body'> 
+<form class="form-control-static" action="cadastroAlunos.php" method="post" name="cadastro" id="cadastro">
+  <p>
+    <label  for="codigo">Código do Aluno: </label>
+    <input type="text" name="codigoA" id="codigoA" size="7">
+  </p>
+  <p>
+    <label for="nomeA">Nome do Aluno:   </label>
+    <input type="text" name="nomeA" id="nomeA" size="30">
+  </p>
+  <p>
+    <label for="endereco">Endereço:  </label>
+    <input type="text" name="enderecoA" id="enderecoA" size="50">
+    </p>
+    <p>
+    <label for="cidade"> Cidade:   </label>
+    <input type="text" name="cidadeA" id="cidadeA" size="10">
+  </p>
+  <p>
+  <label for="select">Estado:</label>
+  <select name="estadoA" id="estadoA">
+    <option value="ES">Espirito Santo</option>
+    <option value="MG">Minas Gerais</option>
+    <option value="SP">São Paulo</option>
+    <option value="RJ">Rio de Janeiro</option>
+  </select>
+</p>
+  <p>
+    <label for="cepA">CEP: </label>
+    <input type="text" name="cepA" id="cepA">
+  </p>
+  <p>
+    <label for="telefoneA">Telefone: </label>
+    <input type="text" name="telefoneA" id="telefoneA">
+  </p>
+  <p>
+    <label for="nascimentoA">Nascimento: </label>
+    <input type="text" name="nascimentoA" id="nascimentoA" placeholder="YYYY-MM-DD">
+  </p>
+  <p>
+    <label for="responsavelA">Responsavel: </label>
+    <input type="text" name="responsavelA" id="responsavelA">
+  </p>
+   <p>
+  <label for="statusA">Status Aluno:</label>
+  <select name="statusA" id="statusA">
+    <option value="Aprovado">Aprovado</option>
+    <option value="Reprovado">Reprovado</option>
+    <option value="Ativo">Ativo</option>
+    <option value="Inativo">Inativo</option>
+  </select>
+  
+</p>
+<button type='submit' id='botaoC' name='btCadastro'  class='btn btn-info btn-sm'>Cadastrar</button>
+  <button type='reset' id='botaoL' name='btLimpar'  class='btn btn-warning btn-sm'>Limpar</button>
+<br/>
+<br/>
+<br/>
+</form>
+
+<ul id='voltar' class='pager'>
+  <li class='previous'><a href='index.html'>Voltar</a></li>
+  
+</ul> 
+ </div>
+  </div>
+</body>
+</html>

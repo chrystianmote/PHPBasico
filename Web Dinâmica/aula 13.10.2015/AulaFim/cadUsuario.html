@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+<title>Cadastro usuários </title>
+</head>
+ 
+<body>
+ 
+<form action="cadastro.php?acao=usuario" method="post" name="form1" target="_self">
+  <table width="762" border="0">
+    <tr>
+      <th width="480" scope="col"><div align="left"></div>
+        <table width="333" height="205" border="0" align="left">
+        <tr>
+          <th scope="col">Usuario:</th>
+          <th scope="col"> <div align="left">
+              <input name="usuario" type="text" id="usuario" />
+          </div></th>
+        </tr>
+        <tr>
+          <th scope="row">Senha:</th>
+          <td><div align="left">
+              <input name="senha" type="password" id="senha" />
+          </div></td>
+        </tr>
+        <tr>
+          <th scope="row">Nivel:</th>
+          <td><div align="left">
+              <select name="nivel" id="nivel">
+                <option value="1">Administrador</option>
+                <option value="2">Usuário Padrão</option>
+                <option value="3">Restrito</option>
+                <option value="0" selected="selected"></option>
+              </select>
+          </div></td>
+        </tr>
+        <tr>
+          <th colspan="2" scope="row"><div align="center">
+              <input type="submit" name="Submit" value=">>>Cadastrar<<<" />
+            </div>
+              <div align="left"></div></th>
+        </tr>
+</body>
+</html>

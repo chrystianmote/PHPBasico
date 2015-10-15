@@ -1,0 +1,91 @@
+create database dbGourmet;
+
+use dbGourmet;
+
+CREATE TABLE Pedido (
+ idPedido INT NOT NULL ,
+ idMesa INT NOT NULL ,
+ idFidelidade INT NULL   ,
+ DataPedido DATE NOT NULL ,
+ Hora TIME NOT NULL ,
+ StatusPedido VARCHAR(10) NOT NULL ,
+ PRIMARY KEY ( idPedido ) 
+);
+
+
+CREATE TABLE  MenuIngredientes (
+ idMenu INT NOT NULL ,
+ Ingrediente VARCHAR(45) NOT NULL ,
+ PRIMARY KEY ( idMenu, Ingrediente )
+);
+
+
+CREATE TABLE  Fidelidade (
+ idFidelidade INT NOT NULL,
+ idPrivilegio INT NOT NULL ,
+ Cliente VARCHAR(45) NOT NULL ,
+ DataCadastro DATE NOT NULL ,
+ Email VARCHAR(60) NOT NULL,
+ Pontos INT NOT NULL ,
+ Usuario VARCHAR(15) NOT NULL UNIQUE ,
+ Senha VARCHAR(45) NOT NULL ,
+ PRIMARY KEY ( idFidelidade ) 
+);
+
+
+
+CREATE TABLE  ItemPedido (
+ idItem INT NOT NULL,
+ idPedido INT NOT NULL ,
+ idMenu INT NOT NULL ,
+ Quantidade INT NOT NULL ,
+ Preco DECIMAL(9,2) NOT NULL ,
+ HoraEntrega TIME NULL ,
+ PRIMARY KEY ( idItem ) 
+);
+
+
+CREATE TABLE  Privilegio (
+ idPrivilegio INT NOT NULL,
+ Privilegio VARCHAR(10) NOT NULL ,
+ Descricao VARCHAR(45) NOT NULL ,
+ Senha VARCHAR(15) NOT NULL ,
+ PRIMARY KEY ( idPrivilegio ) 
+);
+
+
+CREATE TABLE Menu (
+ idMenu INT NOT NULL ,
+ Nome VARCHAR(45) NOT NULL ,
+ Categoria VARCHAR(20) NOT NULL ,
+ Preco DECIMAL(9,2) NOT NULL ,
+ Tempo VARCHAR(10) NOT NULL ,
+ Pontos INT NOT NULL ,
+ PRIMARY KEY ( idMenu ) 
+);
+
+/* um pedido para muitos */
+alter table itemPedido
+add constraint fk_tbl_pedido 
+foreign key (idPedido) 
+references Pedido (idPedido); 
+
+alter table menuIngredientes
+add constraint fk_tbl_menu 
+foreign key (idMenu) 
+references menu (idMenu); 
+
+alter table pedido
+add constraint fk_tbl_fidelidade 
+foreign key (idFidelidade) 
+references Fidelidade (idFidelidade);
+
+alter table fidelidade
+add constraint fk_tbl_privilegio 
+foreign key (idPrivilegio) 
+references Privilegio (idPrivilegio);
+
+alter table itempedido
+add constraint fk_tbl_menu_ItemPedido
+foreign key (idMenu) 
+references Menu (idMenu);

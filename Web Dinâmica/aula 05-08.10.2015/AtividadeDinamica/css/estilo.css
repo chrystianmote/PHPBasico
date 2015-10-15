@@ -1,0 +1,25 @@
+
+body{
+    background-image: url('../img/background3.jpg');
+    background-repeat: no-repeat;
+}
+#tableform{
+    width: 500px;
+    margin: 0 auto;
+
+}
+#frmAluno,#frmAlterarAluno,#frmProfessor,#frmAlterarProfessor,
+#frmCurso,#frmAlterarCurso,#frmMatricula,#frmAlterarMatricula
+{
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+}
+
+#divForm{
+    margin: 20px auto;
+    background-image: url('../img/sombra.png');
+    background-repeat: repeat;
+    width: 550px;
+    height: auto;
+    margin-bottom: 20px;
+}

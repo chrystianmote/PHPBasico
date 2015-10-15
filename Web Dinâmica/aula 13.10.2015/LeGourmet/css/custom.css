@@ -1,0 +1,122 @@
+
+header{
+    height: 115px;
+    background:url('../img/sombra.png');
+    float: left;
+    position: relative;
+    width: 100%;
+}
+nav div ul {
+    padding: 20px;
+}
+nav div #linkMenu > li{
+    margin: 20px;
+    font-size: 120%;
+
+}
+nav div #linkMenu>li>:hover{
+    color: #8A1F3D;
+    text-shadow: 0 0 1px #8A1F3D;
+    background:url('../img/sombra.png'); 
+    border-bottom: 3px #8A1F3D solid;
+    border-radius: 8px;
+    transition: ease .25s;
+    cursor: default;
+}
+nav div #linkMenu>li>:focus{
+    color: #8A1F3D;
+    background:url('../img/sombra.png'); 
+    border-bottom: 3px #8A1F3D solid;
+    border-radius: 5px;
+}
+
+nav div #linkMenu > li>a{
+    font-weight: bolder;
+    color: #FFF;
+    padding: 20px 20px 15px;
+    text-transform: uppercase;            }
+#linkMenu{
+    padding: 0;
+    margin: 0 auto;
+}
+button span{
+    padding: 3px;
+}
+body > .container{
+    background: url('../img/fastfood3.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 700px;
+}
+#lanches{
+    margin: 150px 0 35px;
+    background: url('../img/divisor.png');
+    background-repeat: no-repeat;
+    height: 50px;
+}
+#imgBebidas{
+    margin-top: 150px;
+    background: url('../img/fastfood4.jpg') 0 -150px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 500px;
+}
+#imgPratos{
+    margin-top: 50px;
+    background: url('../img/fastfood5.jpg') 0 -150px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 500px;
+}
+#imgSobremesas{
+    margin-top: 50px;
+    background: url('../img/fastfood6.jpg') 0 -150px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 500px; 
+}
+
+#bebidas,#pratos,#sobremesas{
+    margin-bottom: 35px;
+    background: url('../img/divisor.png');
+    background-repeat: no-repeat;
+    height: 50px;
+    background-size: 100%;
+}
+
+section #lanches h3, #bebidas h3, #pratos h3,#sobremesas h3{
+    text-align: center;
+    padding-top: 13px;
+    font-weight: bold;
+    color: #FFF;
+    text-shadow: 0 0 2px #DDD;
+    cursor: default;
+
+}
+
+section #lanches h3:hover, #bebidas h3:hover, 
+#pratos h3:hover, #sobremesas h3:hover{
+    text-shadow: 0 0 10px #CCC;
+}
+
+#categoria{
+    background:url('../img/sombra.png');
+
+}
+#categoria a{
+    cursor: default;
+    color:#FFF;
+    transition: ease .35s;
+}
+#categoria a:hover{
+    color:#FF0;
+    text-decoration: none;
+    text-shadow: 0 0 2px #FF0;
+}
+.espaco{
+    margin: 100px 0 -100px;
+}
+.espaco2{
+    margin: 20px 0 0;
+}
+
